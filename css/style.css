@@ -1,0 +1,165 @@
+body{
+   background-color: #6197FF;
+   font-size: 16px;
+   font-family: 'Roboto';
+}
+ button:focus {
+    outline:0;
+}
+.widget-container{
+   box-shadow: -1px 4px 98px -20px rgba(0,0,0,0.75);
+   background: none;
+   height: 250px;
+   width: 400px;
+   position: absolute;
+   top: 50%;
+   text-align: left;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.top-container{
+   position: absolute;
+   text-align: left;
+   background-color: #404040;
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px;
+   height: 40%;
+   width: 100%;
+}
+.top-right-container{
+   width: 55%;
+   padding-left: 10px;
+   overflow: visible;
+}
+.top-left-container{
+   width: 40%;
+   margin: 0px;
+   padding: 0px;
+}
+.bottom-container{
+   box-shadow: none;
+   background-color: white;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   height: 60%;
+   width: 100%;
+   margin-top: 25%;
+}
+.footer{
+   position: absolute;
+   bottom: 0px;
+   text-align: right;
+}
+.loading-display{
+   position: absolute;
+   top: 50%;
+   text-align: left;
+   left: 50%;
+   font-size: 80%;
+   transform: translate(-50%, -50%);
+}
+.badge{
+   content: url("https://darksky.net/dev/img/attribution/poweredby-oneline-darkbackground.png");
+   height: 35px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   margin-top: 145px;
+   margin-left: 0;
+}
+.light-hover:hover {
+   opacity: 0.5;
+   transition: opacity 0.1s ease-in;
+}
+.current-temp{
+   font-size: 250%;
+   color: white;
+   font-family: 'Roboto';
+   font-weight: lighter;
+   text-align: left;
+   margin-top: 14px;
+   margin-left: 20px;
+}
+
+.inline{
+   display: inline-block;
+   vertical-align: top;
+}
+.temp-format {
+   font-size: 70%;
+   position: relative;
+   vertical-align: top;
+   transform: translate(345px, -35px);
+   border: 0px;
+   background: none;
+   margin-left: -4px;
+   font-weight: lighter;
+   cursor: pointer;
+   visibility: hidden;
+}
+
+.celsius{
+   border-right: 0.5px solid grey;
+   padding-right: 8px;
+   color: black;
+   pointer-events: none;
+}
+.faren{
+   color: #b3b3b3
+}
+.curr-description{
+   font-size: 130%;
+   color: white;
+   margin-top: 25px;
+   margin-bottom: -6px;
+   text-align: right;
+   font-weight: lighter;
+   letter-spacing: 1.5px;
+   margin-right: 17px;
+}
+.small-icon{
+   height: 15px;
+   margin-top: 21px;
+   margin-right: -5px;
+   visibility: hidden;
+   opacity: 0.4;
+}
+.drop-icon{
+   content: url("https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2014/png/iconmonstr-drop-1.png&r=255&g=255&b=255");
+}
+.wind-icon{
+   content: url("https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2016/png/iconmonstr-weather-64.png&r=255&g=255&b=255");
+}
+.sunset-icon{
+   content: url("https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2016/png/iconmonstr-weather-108.png&r=255&g=255&b=255");
+}
+.cloud-icon{
+   content: url("https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-cloud-1.png&r=255&g=255&b=255");
+}
+.precip, .wind, .sunset, .clouds{
+   color: white;
+   margin-left: 7px;
+   margin-top: 23px;
+   
+}
+.small-desc{
+   font-size: 75%;
+   font-family: 'Roboto';
+   color: white;
+   font-weight: lighter;
+   letter-spacing: 0.9px;
+   padding-right: 15px;
+   opacity: 0.6;
+}
+.loc-name{
+   margin-left: 23px;
+   transform: translate(0px, -42px);
+   font-size: 90%;
+}
+.time{
+   color: black;
+   font-size: 100%;
+   margin-left: 23px;
+   padding-top: 18px;
+}
