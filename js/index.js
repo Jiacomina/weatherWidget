@@ -58,7 +58,7 @@ $(document).ready(function() {
          $(".curr-description").html(currDesc);
 
          var iconDesc = json.currently.icon;
-
+         console.log("DS: " + iconDesc)
          switch(iconDesc){
             case "clear-day": {
                iconDesc = "day-sunny";
@@ -72,7 +72,7 @@ $(document).ready(function() {
             case "fog": {iconDesc = "fog"; break;}
             case "cloudy": {iconDesc = "cloudy"; break;}
             case "partly-cloudy-day": {iconDesc = "day-cloudy"; break;}
-            case "partly-cloudy-night": {iconDesc = "wi-night-cloudy"; break;}
+            case "partly-cloudy-night": {iconDesc = "night-cloudy"; break;}
             case "hail": {iconDesc = "hail"; break;}
             case "thunderstorm": {iconDesc = "thunderstorm"; break;}
             case "tornado": {iconDesc = "tornado"; break;}
