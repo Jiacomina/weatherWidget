@@ -67,8 +67,8 @@ body{
    text-decoration: inherit;
 }
 .badge{
-   content: url("https://darksky.net/dev/img/attribution/poweredby-oneline-darkbackground.png");
-   height: 30px;
+   content: url("https://raw.githubusercontent.com/Jiacomina/weatherWidget/master/Credentials.png");
+   height: 35px;
    position: absolute;
    left: 50%;
    top: 50%;
