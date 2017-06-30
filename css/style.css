@@ -1,5 +1,7 @@
+@import url("weather-icons.css");
+
 body{
-   background-color: #6197FF;
+   background-color: grey;
    font-size: 16px;
    font-family: 'Roboto';
 }
@@ -21,8 +23,8 @@ body{
    position: absolute;
    text-align: left;
    background-color: #404040;
-   border-top-right-radius: 10px;
-   border-top-left-radius: 10px;
+   border-top-right-radius: 8px;
+   border-top-left-radius: 8px;
    height: 40%;
    width: 100%;
 }
@@ -30,6 +32,8 @@ body{
    width: 55%;
    padding-left: 10px;
    overflow: visible;
+   text-align: right;
+
 }
 .top-left-container{
    width: 40%;
@@ -39,11 +43,12 @@ body{
 .bottom-container{
    box-shadow: none;
    background-color: white;
-   border-bottom-left-radius: 10px;
-   border-bottom-right-radius: 10px;
+   border-bottom-left-radius: 8px;
+   border-bottom-right-radius: 8px;
    height: 60%;
    width: 100%;
    margin-top: 25%;
+   vertical-align: middle;
 }
 .footer{
    position: absolute;
@@ -57,6 +62,7 @@ body{
    left: 50%;
    font-size: 80%;
    transform: translate(-50%, -50%);
+   letter-spacing: 0.5px;
 }
 .badge{
    content: url("https://darksky.net/dev/img/attribution/poweredby-oneline-darkbackground.png");
@@ -65,7 +71,7 @@ body{
    left: 50%;
    top: 50%;
    transform: translate(-50%, -50%);
-   margin-top: 145px;
+   margin-top: 150px;
    margin-left: 0;
 }
 .light-hover:hover {
@@ -90,7 +96,7 @@ body{
    font-size: 70%;
    position: relative;
    vertical-align: top;
-   transform: translate(345px, -35px);
+   transform: translate(350px, -143px);
    border: 0px;
    background: none;
    margin-left: -4px;
@@ -102,7 +108,7 @@ body{
 .celsius{
    border-right: 0.5px solid grey;
    padding-right: 8px;
-   color: black;
+   color: grey;
    pointer-events: none;
 }
 .faren{
@@ -110,7 +116,7 @@ body{
 }
 .curr-description{
    font-size: 130%;
-   color: white;
+   color: black;
    margin-top: 25px;
    margin-bottom: -6px;
    text-align: right;
@@ -120,7 +126,7 @@ body{
 }
 .small-icon{
    height: 15px;
-   margin-top: 21px;
+   margin-top: 15px;
    margin-right: -5px;
    visibility: hidden;
    opacity: 0.4;
@@ -140,8 +146,8 @@ body{
 .precip, .wind, .sunset, .clouds{
    color: white;
    margin-left: 7px;
-   margin-top: 23px;
-   
+   margin-top: 17px;
+
 }
 .small-desc{
    font-size: 75%;
@@ -162,4 +168,39 @@ body{
    font-size: 100%;
    margin-left: 23px;
    padding-top: 18px;
+}
+.wi{
+   font-size: 200%;
+   visibility: hidden;
+   color: white;
+   margin-right: 13px;
+   margin-top: 18px;
+   margin-bottom: -5px;
+   text-align: right;
+   opacity: 0.7;
+}
+.label-off{
+   opacity: 0.5;
+   cursor: pointer;
+}
+.chart-hidden{
+   visibility: hidden;
+}
+.legend-label{
+   border: none;
+   background: none;
+   font-weight: lighter;
+   margin-top: 10px;
+}
+.graph-legend{
+   text-align: center;
+
+}
+.graph{
+   position: absolute;
+   margin: 0 auto;
+   vertical-align: middle;
+   width: 320px;
+   height: 90px;
+   transform: translate(30px, 15px);
 }
