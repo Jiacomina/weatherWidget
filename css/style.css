@@ -1,7 +1,7 @@
 @import url("weather-icons.css");
 
 body{
-   background-color: grey;
+   background-image: linear-gradient(45deg, rgba(240, 230, 227, 0.5) 10%, rgba(148, 170, 182, 0.8) 100%), linear-gradient(-45deg, #494d71 0%, rgba(217, 230, 185, 0.5) 80%);
    font-size: 16px;
    font-family: 'Roboto';
 }
@@ -9,7 +9,7 @@ body{
     outline:0;
 }
 .widget-container{
-   box-shadow: -1px 4px 98px -20px rgba(0,0,0,0.75);
+   box-shadow: 9px 7px 40px -6px rgba(0,0,0,0.25);
    background: none;
    height: 250px;
    width: 400px;
@@ -58,15 +58,17 @@ body{
 .loading-display{
    position: absolute;
    top: 50%;
-   text-align: left;
+   text-align: center;
    left: 50%;
-   font-size: 80%;
-   transform: translate(-50%, -50%);
-   letter-spacing: 0.5px;
+   font-size: 70%;
+   transform: translate(-50%, -20%);
+   letter-spacing: 0.7px;
+   font-weight: bold;
+   text-decoration: inherit;
 }
 .badge{
    content: url("https://darksky.net/dev/img/attribution/poweredby-oneline-darkbackground.png");
-   height: 35px;
+   height: 30px;
    position: absolute;
    left: 50%;
    top: 50%;
@@ -96,7 +98,7 @@ body{
    font-size: 70%;
    position: relative;
    vertical-align: top;
-   transform: translate(350px, -143px);
+   transform: translate(348px, -140px);
    border: 0px;
    background: none;
    margin-left: -4px;
@@ -194,13 +196,13 @@ body{
 }
 .graph-legend{
    text-align: center;
-
+   visibility: hidden;
 }
 .graph{
    position: absolute;
    margin: 0 auto;
    vertical-align: middle;
-   width: 320px;
-   height: 90px;
-   transform: translate(30px, 15px);
+   width: 330px;
+   height: 95px;
+   transform: translate(20px, 10px);
 }

@@ -55,12 +55,18 @@ $(document).ready(function() {
 
          //get description
          var currDesc = json.currently.summary;
-         var iconDesc = "day-sunny";
          $(".curr-description").html(currDesc);
-         switch(currDesc){
-            case "clear-day": {iconDesc = "day-sunny"; break;}
+
+         var iconDesc = json.currently.icon;
+
+         switch(iconDesc){
+            case "clear-day": {
+               iconDesc = "day-sunny";
+               $(".wi").css("color", "rgb(246, 195, 87)");
+               break;
+            }
             case "clear-night": {iconDesc = "night-clear"; break;}
-            case "rain": {iconDesc = "rain"; break;}
+            case "rain": {iconDesc = "rain"; $(".wi").css("color", "rgb(183 ,219 ,241)"); break;}
             case "snow": {iconDesc = "now"; break;}
             case "sleet": {iconDesc = "sleet"; break;}
             case "fog": {iconDesc = "fog"; break;}
@@ -70,6 +76,7 @@ $(document).ready(function() {
             case "hail": {iconDesc = "hail"; break;}
             case "thunderstorm": {iconDesc = "thunderstorm"; break;}
             case "tornado": {iconDesc = "tornado"; break;}
+            default:  iconDesc = "day-sunny";
          }
          $(".wi").addClass("wi-" + iconDesc);
          $(".wi").css("visibility", "visible");
@@ -83,20 +90,24 @@ $(document).ready(function() {
          ];
          $(".time").html(date.getDay() + " " + monthNames[month]  + " " + date.getFullYear());
 
-
-
          // get chance of rain
          $(".precip").html(json.currently.precipProbability.toFixed(1)*100 + "%");
-  // wind speed
-  $(".wind").html((json.currently.windSpeed/3.6).toFixed(1) + " m/s");
+
+         // wind speed
+         $(".wind").html((json.currently.windSpeed/3.6).toFixed(1) + " m/s");
+
          //sunset time
          var sunsetTime = new Date(json.daily.data[0].sunsetTime*1000);
          $(".sunset").html(sunsetTime.getHours()%12 + ':' + sunsetTime.getMinutes());
+
          //cloud cover
          $(".clouds").html(json.currently.cloudCover.toFixed(1)*100 + "%");
 
          // Create Weather Chart
          createChart();
+
+         // reveal chart labels
+         $(".graph-legend").css("visibility", "visible");
 
          // when F button pressed, change to Farenheight
          $(".faren").on("click", function() {
@@ -119,6 +130,7 @@ $(document).ready(function() {
    }
    function error(err) {
       console.warn(`ERROR(${err.code}): ${err.message}`);
+      $(".loading-display").html("<br>Cannot your find location, <br> Please enable location tracking <br> <a href='javascript:window.location.href=window.location.href'>Refresh Page</a>");
    }
 
    // function that toggles temperature display for selected temp scale.
@@ -143,7 +155,10 @@ $(document).ready(function() {
          var tfhour = (hour + i)%24;
          var twhour = tfhour%12;
          if(tfhour > 11 && tfhour != 24) twhour += " pm";
-         else twhour += " am";
+         else {
+            if(tfhour == 0) twhour = 12;
+            twhour += " am";
+         }
          hourLabels[i] = (twhour);
          var hTemp = json.hourly.data[i].temperature;
          if(metric){
@@ -180,6 +195,11 @@ $(document).ready(function() {
                yAxes: [{
                   ticks: {
                      fontSize: 10
+                  },
+                  scaleLabel: {
+                  display: true,
+                  labelString: ' ',
+                  fontSize: 10
                   }
                }],
                xAxes: [{
@@ -197,9 +217,9 @@ $(document).ready(function() {
             datasets:[{
                label: 'Rain',
                data: rainData,
-               borderColor: 'rgb(92  ,134 ,  182)' ,
+               borderColor: '#55AADD' ,
                borderWidth:1,
-               backgroundColor: 'rgba(92  ,134 ,  182   , 0.2)',
+               backgroundColor: 'rgba(85,170,221, 0.2)',
             }]
          },
          options: {
@@ -213,6 +233,11 @@ $(document).ready(function() {
                yAxes: [{
                   ticks: {
                      fontSize: 10
+                  },
+                  scaleLabel: {
+                  display: true,
+                  labelString: '%',
+                  fontSize: 10
                   }
                }],
                xAxes: [{
@@ -245,6 +270,11 @@ $(document).ready(function() {
                   ticks: {
                      fontSize: 10,
                      stepSize: 1
+                  },
+                  scaleLabel: {
+                  display: true,
+                  labelString: 'm/s',
+                  fontSize: 10
                   }
                }],
                xAxes: [{
