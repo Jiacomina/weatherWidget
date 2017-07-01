@@ -1,0 +1,31 @@
+{
+  "name": "weatherwidget",
+  "version": "1.0.0",
+  "description": "Weather desktop app",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js",
+    "package": "asar pack weatherWidget-darwin-x64/weatherWidget.app/Contents/Resources/app weatherWidget-darwin-x64/weatherWidget.app/Contents/Resources/app.asar",
+    "build": "electron-packager . weatherWidget"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiacomina/weatherWidget.git"
+  },
+  "author": "Jacqueline Soon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jiacomina/weatherWidget/issues"
+  },
+  "homepage": "https://github.com/Jiacomina/weatherWidget#readme",
+  "devDependencies": {
+    "asar": "^0.13.0",
+    "devtron": "^1.4.0",
+    "electron": "^1.6.11",
+    "electron-packager": "^8.7.2"
+  },
+  "dependencies": {
+    "electron-debug": "^1.2.0",
+    "jquery": "^3.2.1"
+  }
+}
