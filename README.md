@@ -7,11 +7,8 @@
  ![Screenshot of Widget](https://github.com/Jiacomina/weatherWidget/raw/master/Weather%20Widget%20screenshot.png)
  
  # MAC OS X Desktop App 
- * Desktop app version of the program that works only on MAC OS X. 
- 
- * Packaged using electron. 
- 
- * Avaliable here: https://github.com/Jiacomina/weatherWidget/tree/master/weatherWidget%20Mac%20OSX%20app
+ -Web app was turned into a desktop app for MAC OS X using Electron 
+ -Avaliable here: https://github.com/Jiacomina/weatherWidget/tree/master/weatherWidget%20Mac%20OSX%20app
  
  ![Screenshot of Widget](https://github.com/Jiacomina/weatherWidget/raw/master/Desktop%20App%20Screenshot.png)
  
