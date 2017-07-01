@@ -1,7 +1,8 @@
 # weatherWidget
  - Small weather widget app with minimalistic design.
  - Uses Dark Sky weather API to retrieve forecast as a JSON file
- - Weather icons are from https://github.com/erikflowers/weather-icons
+ - Weather icons and icon fonts are from: https://github.com/erikflowers/weather-icons
+ - See widget here: https://jiacomina.github.io/weatherWidget/
  
  ![Screenshot of Widget](https://github.com/Jiacomina/weatherWidget/raw/master/Weather%20Widget%20screenshot.png)
  
