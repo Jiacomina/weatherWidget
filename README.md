@@ -10,7 +10,7 @@
  
  * Packaged using electron. 
  
- * Avaliable here: https://github.com/Jiacomina/weatherWidget/raw/master/Desktop%20App%20Screenshot.png
+ * Avaliable here: https://github.com/Jiacomina/weatherWidget/tree/master/weatherWidget%20Mac%20OSX%20app
  
  ![Screenshot of Widget](https://github.com/Jiacomina/weatherWidget/raw/master/Desktop%20App%20Screenshot.png)
  
