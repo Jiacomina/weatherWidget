@@ -129,6 +129,7 @@ body{
    text-decoration: none;
    color: inherit;
    margin-left: 20px;
+   margin-right: 20px;
 }
 .subtitle:hover{
    text-decoration: underline;
@@ -222,4 +223,17 @@ body{
    width: 330px;
    height: 95px;
    transform: translate(20px, 10px);
+}
+.last-updated{
+   height: 35px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   margin-top: 190px;
+   margin-left: 0;
+   color: white;
+   text-align: center;
+   font-size: 70%;
+   font-weight: bold;
 }

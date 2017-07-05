@@ -3,10 +3,11 @@
 //https://darksky.net/dev/img/attribution/poweredby-oneline.png
 //https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/d77118a60fbebfa1cb5a648f42f623a9/37.8267,-122.4233?'
 console.clear();
-$(document).ready(function() {
-   var metric = true;
+  var metric = true;
    var date;
    var json;
+$(document).ready(function() {
+
    //check that geolocation feature supported by browser
    if ("geolocation" in navigator) {
       console.log("Geolocation supported");
@@ -14,6 +15,11 @@ $(document).ready(function() {
       console.log("Geolocation not supported");
       throw new Error("User does not support geolocation");
    }
+   getWeather();
+   setInterval(getWeather, 120000);
+});
+
+function getWeather(){
 
    //get location
    navigator.geolocation.getCurrentPosition(success, error, {
@@ -128,6 +134,7 @@ $(document).ready(function() {
          });
       });
    }
+}
    function error(err) {
       console.warn(`ERROR(${err.code}): ${err.message}`);
       $(".loading-display").html("<br>Cannot your find location, <br> Please enable location tracking <br> <a href='javascript:window.location.href=window.location.href'>Refresh Page</a>");
@@ -285,6 +292,15 @@ $(document).ready(function() {
             }
          }
       });
+
+      var currentDate = new Date(); 
+   $(".last-updated").html("HI");
+   $(".last-updated").html("Last Updated: " + currentDate.getDate() + "/"
+                + (currentDate.getMonth()+1)  + "/" 
+                + currentDate.getFullYear() + " @ "  
+                + currentDate.getHours() + ":"  
+                + currentDate.getMinutes() + ":" 
+                + currentDate.getSeconds());
    }
 
    // toggle visibility of graphs in bottom container
@@ -306,5 +322,5 @@ $(document).ready(function() {
       $(".rain-chart, .wind-chart").addClass("chart-hidden"); // hide other charts
       $(".temp-chart").removeClass("chart-hidden");
    });
-});
+
 
