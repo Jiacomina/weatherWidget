@@ -100,7 +100,7 @@ function getWeather(){
          $(".precip").html(json.currently.precipProbability.toFixed(1)*100 + "%");
 
          // wind speed
-         $(".wind").html((json.currently.windSpeed/3.6).toFixed(1) + " m/s");
+         $(".wind").html((json.currently.windSpeed).toFixed(1) + " km/h");
 
          //sunset time
          var sunsetTime = new Date(json.daily.data[0].sunsetTime*1000);
@@ -173,7 +173,7 @@ function getWeather(){
          }
          tempData[i] = hTemp.toFixed(2);
          rainData[i] = json.hourly.data[i].precipProbability*100;
-         windData[i] = (json.hourly.data[i].windSpeed/3.6).toFixed(3);
+         windData[i] = (json.hourly.data[i].windSpeed).toFixed(3);
       }
       var tempEl = document.getElementById("temp-chart");
       var rainEl = document.getElementById("rain-chart");
@@ -201,7 +201,7 @@ function getWeather(){
             scales: {
                yAxes: [{
                   ticks: {
-                     fontSize: 10
+                     fontSize: 10,
                   },
                   scaleLabel: {
                   display: true,
@@ -239,7 +239,8 @@ function getWeather(){
             scales: {
                yAxes: [{
                   ticks: {
-                     fontSize: 10
+                     fontSize: 10,
+                     max: 100
                   },
                   scaleLabel: {
                   display: true,
@@ -280,7 +281,7 @@ function getWeather(){
                   },
                   scaleLabel: {
                   display: true,
-                  labelString: 'm/s',
+                  labelString: 'km/h',
                   fontSize: 10
                   }
                }],
