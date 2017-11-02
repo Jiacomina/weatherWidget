@@ -102,9 +102,9 @@ function getWeather(){
          // wind speed
          $(".wind").html((json.currently.windSpeed).toFixed(1) + " km/h");
 
-         //sunset time
-         var sunsetTime = new Date(json.daily.data[0].sunsetTime*1000);
-         $(".sunset").html(sunsetTime.getHours()%12 + ':' + sunsetTime.getMinutes());
+         // //sunset time
+         // var sunsetTime = new Date(json.daily.data[0].sunsetTime*1000);
+         // $(".sunset").html(sunsetTime.getHours()%12 + ':' + sunsetTime.getMinutes());
 
          //cloud cover
          $(".clouds").html(json.currently.cloudCover.toFixed(1)*100 + "%");
@@ -161,11 +161,13 @@ function getWeather(){
       for(var i = 0; i < hourLabels.length; i++){
          var tfhour = (hour + i)%24;
          var twhour = tfhour%12;
+         if(twhour == 0) twhour = 12;
          if(tfhour > 11 && tfhour != 24) twhour += " pm";
          else {
             if(tfhour == 0) twhour = 12;
             twhour += " am";
          }
+
          hourLabels[i] = (twhour);
          var hTemp = json.hourly.data[i].temperature;
          if(metric){
